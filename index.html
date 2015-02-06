@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Project 1: Twitter</title>
+		<meta name="viewport" content="width=device-width">
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css"> 
+	</head>
+	<body>
+		<header>
+			<h1>Project 1: Twitter</h1>
+			<img class="logo" src="http://www.lazytechguys.com/wp-content/uploads/2012/05/Twitter-Bird-Logo.png" alt="Twitter logo">
+		</header>
+		<div class="container">
+			
+			<section>
+
+				<h2>Problems to solve</h2>
+
+				<p class="quote">Twitter has changed the journalistic landscape.</p>
+
+				<p>The majority of Australian journalists and news outlets use Twitter daily, for sourcing and distributing news.</p>
+
+				<p>When there's breaking news, how does a journalist or a member of the public sift through the noise in their feed to get the facts?</p>
+				
+				<a class="twitter-timeline" href="https://twitter.com/hashtag/breakingnews" data-widget-id="563328630143475712">#breakingnews Tweets</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+				<h2>Solution</h2>
+
+				<p>Journalists and news outlets are verified when they sign up.</p>
+
+				<p>Users can easily switch between a feed for 'News' and a feed for 'All'.</p>
+
+			</section>
+			
+			<section>
+				<h2>Models</h2>
+
+				<h3>Users</h3>
+
+				<ul>
+					<li>Name</li>
+					<li>Email</li>
+					<li>Password</li>
+					<li>Username</li>
+					<li>Bio</li>
+					<li>Journalist / News outlet (boolean)</li>
+					<li>Organisation</li>
+					<li>Tweets (a user has many tweets)</li>
+					<li>Timestamps</li>
+					<li>Avatar?</li>
+					<li>Followers? (many)</li>
+					<li>Following? (many)</li>
+					<li>Mentions? (many)</li>
+					<li>Location?</li>
+				</ul>
+
+				<h3>Tweets</h3>
+
+					<ul>
+						<li>Text</li>
+						<li>Image</li>
+						<li>User_id (a tweet has one user)</li>
+						<li>Timestamps</li>
+						<li>Retweets? (many)</li>
+						<li>Favourites? (many)</li>
+						<li>Replies? (many)</li>
+						<li>Location?</li>
+					</ul>
+
+			</section>
+
+			<section>
+
+				<h2>Views</h2>
+
+				<h3>Log in/Sign up</h3>
+
+					<p>Allows the user to sign up or log in if they already have an account.</p>
+
+				<h3>News</h3>
+
+					<p>Displays a timeline of all tweets from a journalist or news organisation that you are following. This would be the default view.</p>
+
+				<h3>All</h3>
+
+					<p>Displays a timeline of all tweets from everyone you are following.</p>
+
+				<h3>New tweet</h3>
+
+					<p>Allows the user to create a new tweet.</p>
+
+				<h3>Tweet</h3>
+
+					<p>Shows single tweet on page.</p>
+
+				<h3>User</h3>
+
+					<p>Shows single user on page.</p>
+
+				<h3>User tweets</h3>
+
+					<p>Displays all of the users tweets.</p>
+
+				<h3>Following</h3>
+
+					<p>Displays everyone who the user is following.</p>
+
+				<h3>Followers</h3>
+
+					<p>Displays the users followers.</p>
+
+				<h3>Mentions</h3>
+
+					<p>Displays the users mentions.</p>
+
+			</section>
+			
+			<section>
+
+				<h2>APIs</h2>
+
+				<ul>
+					<li><a href="https://developers.google.com/maps/documentation/geocoding/">Google Geocoding API</a> for user/tweet location </li>
+					<li><a href="https://developer.amazon.com/public/apis">Amazon</a> for user avatars and tweets with images</li>
+					<li><a href="https://www.mashape.com/klise17/goo-gl">Google URL shortener</a>?</li>
+				</ul>
+
+			</section>
+
+			<section>
+
+				<h2>Gems</h2>
+
+				<ul>
+					<li>gem 'pry-rails'</li>
+					<li>gem 'pry-stack_explorer'</li>
+					<li>gem 'annotate'</li>
+					<li>gem 'quiet_assets'</li>
+					<li>gem 'better_errors'</li>
+					<li>gem 'binding_of_caller'</li>
+					<li>gem 'meta_request'</li>
+					<li>gem 'bcrypt', '~> 3.1.7'</li>
+					<li>gem 'json'</li>
+					<li>gem carrierwave</li>
+					<li>gem paperclip</li>
+				</ul>
+
+			</section>
+								   
+
+			<section>
+				<h2>Challenges</h2>
+
+					<ul>
+						<li>Mentions</li>
+						<li>Favourites</li>
+						<li>Hashtags</li>
+						<li>Replies</li>
+						<li><a href="https://www.railstutorial.org/book/following_users">Following/followers relationship</a></li>
+						<li>Location data - user location or tweet location?</li>
+						<li>Profile pictures</li>
+						<li>Search function</li>
+						<li>Authorisation</li>
+						<li>Responsive</li>
+						<li>Ajax?</li>
+					</ul>
+
+			</section>
+
+			<section>
+				<h2>Optional extras</h2>
+				<ul>
+					<li>Allow users to enter questions and have a tweet reply sent back to them automatically. Eg, 'What is today's biggest news story?' could return the most retweeted tweets from a news outlet or journalist in the last 12 hours. Or 'What's happening near me?' could return tweets based on the user's location.</li>
+					<li>Allow users to send tweets with audio/video.</li>
+					<li>Direct messaging</li>
+					<li>User Twitter's advanced search option to include most retweeted tweets from new outlets/journalists on the same day a year ago</li>
+				</ul>
+			</section>
+			
+		</div>
+		<script src="js/main.js"></script>
+		<script src="js/jquery.js"></script>
+	</body>
+</html>
+
+
+
+<!-- need a third table, a self joining table, but it won't require a model
+for followers/following -->
